@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import Snack from "./SnacksList";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+    test("renders without crashing", () => {
+        render(<Snack />);
+        const text = screen.getByText("Grapes");
+        expect(text).toBeInTheDocument();
+    });
 });
